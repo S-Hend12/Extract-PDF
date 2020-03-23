@@ -2,6 +2,8 @@ library(pdftools)
 
 print("Script Starting")
 
+rm(list = ls())
+
 # directory paths
 Desktop <- file.path(Sys.getenv("USERPROFILE"),"Desktop")
 subDir <- "PDF_Exports"
@@ -16,12 +18,10 @@ set_directory_paths <- function() {
 
 set_directory_paths()
 
-pdf_file <- "http://central.bac-lac.gc.ca/.item/?id=1910-IAAR-RAAI&op=pdf&app=indianaffairs"
+pdf_file <- "http://central.bac-lac.gc.ca/.item/?id=1992-IAAR-RAAI&op=pdf&app=indianaffairs"
 
 text <- pdf_text(pdf_file)
 
-
-
-cat(text, file = "filename.txt")
+cat(text, file = "1992.txt")
 
 print("Script Completed")
